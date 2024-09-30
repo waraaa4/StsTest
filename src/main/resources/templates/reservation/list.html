@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+
+th {
+	background-color: #C0C0C0;
+}
+
+th, td {
+	padding: 10px 30px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.title-div {
+	margin-bottom: 30px;
+}
+</style>
+</head>
+
+<body>
+
+	<div class="title-div">
+		<h3>Reservation List Page</h3>
+		<a class="registerLink" href="/reservation/register">새로운 예약정보 등록</a>
+	</div>
+
+	<table>
+		<tr>
+			<th>예약번호</th>
+			<th>예약일</th>
+			<th>객실번호</th>
+			<th>예약자</th>
+		</tr>
+		<tr th:each="dto : ${list}">
+			<td>
+				<a th:href="@{/reservation/read(no=${dto.no})}">
+					[[${dto.no}]] 
+				</a>
+			</td>
+			<td>[[${dto.check_in_date}]]</td>
+			<td>[[${dto.room_no}]]</td>
+			<td>[[${dto.guest_name}]]</td>
+		</tr>
+	</table>
+</body>
+
+</html>

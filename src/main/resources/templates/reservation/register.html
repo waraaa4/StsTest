@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    }
+    label {
+        display: inline-block;
+        width: 100px;
+    }
+    button {
+        margin-top: 20px;
+        width: 100px;
+    }
+    .title-div {
+      margin-bottom: 30px;
+    }
+</style>
+</head>
+
+<body>
+<div class="title-div">
+    <h3>Reservation Register Page</h3>
+</div>
+
+<form action="/reservation/register" method="post">
+    <div>
+        <label for="checkInDate">예약일</label>
+        <input type=date id="checkInDate" name="check_in_date"/>
+    </div>
+    <div>
+        <label for="roomNo">객실번호</label>
+        <input type="text" id="roomNo" name="room_no" />
+    </div>
+    <div>
+        <label for="guestName">예약자</label>
+        <input type="text" id="guestName" name="guest_name" />
+    </div>
+    <div>
+        <label for="guestPhone">예약자 연락처</label>
+        <input type="text" id="guestPhone" name="guest_phone" />
+    </div>
+    <button type="submit">전송</button>
+</form>
+</body>
+
+</html>
