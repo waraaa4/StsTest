@@ -45,16 +45,11 @@ public class ReservationController {
 	}
 	
 	@GetMapping("/read")
-	public String read(@RequestParam(name = "no") int no, 
-	                   @RequestParam(defaultValue = "0", name = "page") int page,
-	                   Model model) {
+	public String read(@RequestParam(name = "no") int no, Model model) {
 	    ReservationDTO dto = service.read(no);
 
 	    model.addAttribute("dto", dto);
 	    
-	    model.addAttribute("page", page);
-
-	    // 뷰로 이동
 	    return "reservation/read"; 
 	}
 
